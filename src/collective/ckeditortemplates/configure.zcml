@@ -44,4 +44,12 @@
       image="cktemplate_icon.gif"
       />
 
+  <genericsetup:importStep
+      name="collective.ckeditortemplates"
+      title="policy.bric: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="collective.ckeditortemplates.setuphandlers.setupVarious">
+      <depends name="types"/>
+  </genericsetup:importStep>
+
 </configure>
