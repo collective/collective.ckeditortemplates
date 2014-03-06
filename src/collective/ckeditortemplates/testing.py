@@ -17,6 +17,13 @@ class CollectiveCKTemplatesLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import collective.ckeditor
+        xmlconfig.file(
+            'configure.zcml',
+            collective.ckeditor,
+            context=configurationContext
+        )
+
         import collective.ckeditortemplates
         xmlconfig.file(
             'configure.zcml',
