@@ -5,6 +5,8 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
 
+from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
+
 from plone import api
 from plone.testing import z2
 
@@ -50,3 +52,9 @@ CKTEMPLATES_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(CKTEMPLATES_FIXTURE, z2.ZSERVER_FIXTURE),
     name="CollectiveCKTemplatesLayer:Functional"
 )
+
+
+CKTEMPLATES_ROBOT_TESTING = FunctionalTesting(
+            bases=(CKTEMPLATES_FIXTURE, AUTOLOGIN_LIBRARY_FIXTURE, z2.ZSERVER_FIXTURE),
+                name="CKTEMPLATES_ROBOT_TESTING")
+
