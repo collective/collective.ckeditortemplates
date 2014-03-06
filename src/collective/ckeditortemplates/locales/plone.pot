@@ -1,0 +1,75 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-03-06 11:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: collective/ckeditortemplates/profiles/default/types/cktemplate.xml
+msgid "CK Template"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/types/cktemplatefolder.xml
+msgid "CK Template Folder"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/types/cktemplate.xml
+msgid "CKEditor custom template"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/types/cktemplatefolder.xml
+msgid "CKEditor custom template folder"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "Comment about the last transition"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "Previous transition"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "Provides access to workflow history"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "The ID of the user who performed the last transition"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "When the previous transition was performed"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "cktemplate_workflow"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "disable"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "disabled"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "enable"
+msgstr ""
+
+#: collective/ckeditortemplates/profiles/default/workflows/cktemplate_workflow/definition.xml
+msgid "enabled"
+msgstr ""
+

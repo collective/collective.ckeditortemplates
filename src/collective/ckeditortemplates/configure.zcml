@@ -52,4 +52,6 @@
       <depends name="types"/>
   </genericsetup:importStep>
 
+  <i18n:registerTranslations directory="locales" />
+
 </configure>
