@@ -16,25 +16,25 @@ msgstr ""
 
 #: ./cktemplate.py:57
 msgid "Group restriction"
-msgstr ""
+msgstr "Restriction de groupe"
 
 #: ./cktemplate.py:54
 msgid "Icon displayed before the title in the list of templates"
-msgstr ""
+msgstr "Icon visible avec le titre dans la liste des templates"
 
 #: ./cktemplate.py:58
 msgid "Restriction on group for the list of templates"
-msgstr ""
+msgstr "Restriction sur le groupe pour la liste des templates"
 
 #: ./cktemplate.py:53
 msgid "Template Icon"
-msgstr ""
+msgstr "Icône de la template"
 
 #: ./cktemplate.py:62
 msgid "Template content"
-msgstr ""
+msgstr "Contenu de la template"
 
 #: ./cktemplate.py:63
 msgid "The content that will be pasted when the template is used"
-msgstr ""
+msgstr "Le contenu sera copié lorsque la template sera utilisée."
 
