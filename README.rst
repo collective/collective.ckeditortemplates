@@ -6,4 +6,4 @@
 
 Introduction
 ============
-
+This products create plone templates for ckeditor
