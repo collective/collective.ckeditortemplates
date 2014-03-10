@@ -1,0 +1,16 @@
+include *.py
+include *.rst
+include .travis.yml
+include buildout.cfg
+include coverage.cfg
+include travis.cfg
+include versions.cfg
+recursive-include docs *.GPL
+recursive-include docs *.rst
+recursive-include src *.gif
+recursive-include src *.po
+recursive-include src *.pot
+recursive-include src *.robot
+recursive-include src *.txt
+recursive-include src *.xml
+recursive-include src *.zcml
