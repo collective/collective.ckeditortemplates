@@ -4,7 +4,9 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- ckeditor template folder is no more allow globally, this container is 
+  installed with package
+  [bsuttor]
 
 
 0.1 (2014-03-10)
