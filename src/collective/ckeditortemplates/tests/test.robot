@@ -20,7 +20,7 @@ Add and use cktemplate
     Click Link  id=cktemplate
 
     Input Text  id=form-widgets-IDublinCore-title  ${cktemplate_name}
-    Execute JavaScript  CKEDITOR.instances['form.widgets.content'].insertText('<h1> My title </h1>')
+    Execute JavaScript  CKEDITOR.instances['form.widgets.content'].insertHtml('<h1>My title</h1>')
     Submit Form  form
     Click button  id=form-buttons-save
     Page Should Contain  Item created
