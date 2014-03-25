@@ -32,7 +32,7 @@ Add and use cktemplate
     Open add new menu
     Click Link  id=document
 
-    Input Text  title  My doc with template 
+    Input Text  title  My doc with template
     Execute JavaScript  CKEDITOR.instances['text'].commands.templates.exec()
     Page should contain  ${cktemplate_name}
 
