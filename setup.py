@@ -51,7 +51,7 @@ setup(name='collective.ckeditortemplates',
       extras_require={'test': [
           'plone.app.robotframework',
           'robotframework-debuglibrary',
-          ]},
+      ]},
       entry_points="""
       # -*- Entry points: -*-
       """,
