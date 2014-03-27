@@ -4,6 +4,9 @@ Changelog
 0.2 (unreleased)
 ----------------
 
+- Remove the group restriction on CK Template
+  [mpeeters]
+
 - Improve the parsing of html
   [mpeeters]
 
