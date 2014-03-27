@@ -87,10 +87,17 @@ class CKTemplate(Document):
         soup = BeautifulSoup(self.content.raw)
         soup.html.hidden = True
         soup.body.hidden = True
-        content = soup.prettify(formatter="html")
+
+        # Replace quotes in contents
+        for element in soup.findAll(text=True):
+            text = unicode(element)
+            text = text.replace(u'"', u'U+0022')
+            text = text.strip()
+            element.replaceWith(text)
         # Remove new lines an carriage returns
-        content = ''.join(content.splitlines())
-        content = content.replace('"', '&quot;')
+        content = ''.join(str(soup).splitlines())
+        content = content.replace('"', "'")
+        content = content.replace(u'U+0022', u'&quot;')
         return content.strip()
 
 
