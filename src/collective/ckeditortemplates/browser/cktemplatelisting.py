@@ -9,8 +9,7 @@ class CKTemplateListingView(grok.View):
     grok.name('cktemplate-listing.js')
     grok.require('zope2.View')
 
-    @property
-    def templates(self):
+    def get_templates(self):
         templates = []
         for brain in self.context.portal_catalog(portal_type='cktemplate',
                                                  review_state=('enabled', )):
@@ -22,13 +21,16 @@ class CKTemplateListingView(grok.View):
     def render(self):
         self.request.response.setHeader('Content-Type',
                                         'application/javascript')
+        template_renders = []
+        for template, path in self.get_templates():
+            template_renders.append(self.render_template(template, path))
         return """CKEDITOR.addTemplates('default',
 {
     imagesPath: CKEDITOR.getUrl('../'),
     templates: [
         %s
     ]
-});""" % ", ".join([self.render_template(t, p) for t, p in self.templates])
+});""" % ", ".join(template_renders)
 
     def render_template(self, template, path):
         base = ('{title: "%(title)s", %(image)s'

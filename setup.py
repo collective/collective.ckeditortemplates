@@ -49,6 +49,7 @@ setup(name='collective.ckeditortemplates',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': [
+          'Mock',
           'plone.app.robotframework',
           'robotframework-debuglibrary',
       ]},
