@@ -1,11 +1,11 @@
 # encoding: utf-8
 from five import grok
 
-from ..cktemplate import ICKTemplateFolder
+from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 
 
 class CKTemplateListingView(grok.View):
-    grok.context(ICKTemplateFolder)
+    grok.context(IPloneSiteRoot)
     grok.name('cktemplate-listing.js')
     grok.require('zope2.View')
 
