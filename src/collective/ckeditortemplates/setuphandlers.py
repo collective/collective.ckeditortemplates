@@ -11,7 +11,7 @@ def setupVarious(context):
     if context.readDataFile('collective.ckeditortemplates_various.txt') is None:
         return
 
-    if not api.content.get(FOLDER):
+    if not site.get(FOLDER):
         types = getToolByName(site, 'portal_types')
         types.getTypeInfo('cktemplatefolder').global_allow = True
         container = api.content.create(site, "cktemplatefolder", id=FOLDER, title=FOLDER)
