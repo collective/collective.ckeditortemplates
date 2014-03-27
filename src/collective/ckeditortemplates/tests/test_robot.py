@@ -17,6 +17,5 @@ def test_suite():
             layered(
                 robotsuite.RobotTestSuite(robot_file),
                 layer=CKTEMPLATES_ROBOT_TESTING)
-         ])
+        ])
     return suite
-

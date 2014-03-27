@@ -3,7 +3,8 @@ from plone import api
 from Products.CMFCore.utils import getToolByName
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 
-FOLDER="ckeditortemplates"
+FOLDER = "ckeditortemplates"
+
 
 def setupVarious(context):
     site = context.getSite()
