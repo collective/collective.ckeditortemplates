@@ -24,7 +24,7 @@ class CKTemplateListingView(grok.View):
                                         'application/javascript')
         return """CKEDITOR.addTemplates('default',
 {
-    imagesPath: CKEDITOR.getUrl('../../'),
+    imagesPath: CKEDITOR.getUrl('../'),
     templates: [
         %s
     ]
