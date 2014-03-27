@@ -2,10 +2,6 @@
 from bs4 import BeautifulSoup
 
 from zope.i18nmessageid import MessageFactory
-from zope.schema import Choice
-from zope.schema import List
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary
 
 from plone.app.contenttypes.content import Folder
 from plone.app.contenttypes.content import Document
@@ -15,7 +11,6 @@ from plone.app.textfield import RichText
 from plone.namedfile.field import NamedImage
 from plone.dexterity.schema import DexteritySchemaPolicy
 from plone.supermodel import model
-from plone import api
 from five import grok
 
 from . import _
@@ -38,25 +33,11 @@ class CKTemplateFolderSchemaPolicy(DexteritySchemaPolicy):
         return (ICKTemplateFolder, )
 
 
-@grok.provider(IContextSourceBinder)
-def plone_group_generator(context):
-    terms = []
-    for group in api.group.get_groups():
-        term = SimpleVocabulary.createTerm(group.id, group.id, PMF(group.id))
-        terms.append(term)
-    return SimpleVocabulary(terms)
-
-
 class ICKTemplate(model.Schema, IDocument):
     """ Schema for CKEditor template """
 
     custom_icon = NamedImage(title=_(u'Template Icon'),
                              description=_(u"Icon displayed before the title in the list of templates"),
-                             required=False)
-
-    group_restriction = List(title=_(u'Group restriction'),
-                             description=_(u"Restriction on group for the list of templates"),
-                             value_type=Choice(source=plone_group_generator),
                              required=False)
 
     content = RichText(title=_(u'Template content'),
@@ -66,16 +47,6 @@ class ICKTemplate(model.Schema, IDocument):
 
 class CKTemplate(Document):
     grok.implements(ICKTemplate)
-
-    def can_view(self, context):
-        user = api.user.get_current()
-        if not self.group_restriction:
-            return True
-        user_groups = [g.id for g in api.group.get_groups(username=user.id)]
-        for group in self.group_restriction:
-            if group in user_groups:
-                return True
-        return False
 
     @property
     def image(self):

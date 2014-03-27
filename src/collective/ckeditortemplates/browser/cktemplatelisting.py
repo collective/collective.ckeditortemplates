@@ -13,9 +13,7 @@ class CKTemplateListingView(grok.View):
         templates = []
         for brain in self.context.portal_catalog(portal_type='cktemplate',
                                                  review_state=('enabled', )):
-            template = brain.getObject()
-            if template.can_view(self.context) is True:
-                templates.append((template, brain.getPath()))
+            templates.append((brain.getObject(), brain.getPath()))
         return templates
 
     def render(self):
