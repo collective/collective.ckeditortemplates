@@ -1,3 +1,2 @@
-- Joe Schmoe, Original Author
-- Bob Slob, contributed monkey patches
-- Jane Main, wrote flibberty module
+- Martin Peeters, Original Author [Affinitic]
+- Benoit Suttor [IMIO]
