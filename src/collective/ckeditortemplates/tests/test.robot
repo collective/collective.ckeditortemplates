@@ -9,9 +9,14 @@ Suite Teardown  Close all browsers
 
 
 *** Test Cases ***
-Plone is installed
+Cktemplate folder is never indexed
     Go to  ${PLONE_URL}
     Page should contain  Powered by Plone
+    Go to  ${PLONE_URL}/ckeditortemplates/edit
+    Input Text  id=form-widgets-IDublinCore-title  edited_cktemplate
+    Click button  id=form-buttons-save
+    Go to  ${PLONE_URL}/folder_contents
+    Element Should Not Be Visible  css=tr#folder-contents-item-ckeditortemplates
 
 Add and use cktemplate
     ${cktemplate_name} =  set variable  my_cktemplate_name
