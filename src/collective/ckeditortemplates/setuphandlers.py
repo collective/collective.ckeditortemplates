@@ -19,4 +19,11 @@ def setupVarious(context):
         excl.exclude_from_nav = True
         types.getTypeInfo('cktemplatefolder').global_allow = False
         container.reindexObject()
-        container.unindexObject()
+        catalog = api.portal.get_tool(name='portal_catalog')
+        catalog.uncatalog_object(container.absolute_url_path())
+        #from zope.interface.declarations import noLongerProvides
+
+        #from Products.Five.utilities.marker import erase
+        #from Products.CMFCore.interfaces._content import ICatalogAware
+        #erase(container, ICatalogAware)
+        #noLongerProvides(container, ICatalogAware)
