@@ -16,21 +16,22 @@ long_description = (
 
 setup(name='collective.ckeditortemplates',
       version=version,
-      description="",
+      description="Plone templates for ckeditor",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
           "Environment :: Web Environment",
           "Framework :: Plone",
+          "Framework :: Plone :: 4.2",
+          "Framework :: Plone :: 4.3",
           "Operating System :: OS Independent",
           "Programming Language :: Python",
-          "Programming Language :: Python :: 2.6",
-          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Programming Language :: Python :: 2.7",
       ],
       keywords='',
-      author='',
-      author_email='',
+      author='IMIO',
+      author_email='support@imio.be',
       url='https://github.com/collective/',
       license='gpl',
       packages=find_packages('src'),
