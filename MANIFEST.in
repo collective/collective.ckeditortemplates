@@ -1,12 +1,12 @@
 include *.py
 include *.rst
+include .coveragerc
 include .travis.yml
 include buildout.cfg
 include coverage.cfg
 include travis.cfg
 include versions.cfg
 include qa.cfg
-include .coveragerc
 recursive-include docs *.GPL
 recursive-include docs *.rst
 recursive-include src *.gif
