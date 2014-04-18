@@ -4,7 +4,8 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix accents errors, decode content to utf-8.
+  [bsuttor]
 
 
 0.2 (2014-03-31)
