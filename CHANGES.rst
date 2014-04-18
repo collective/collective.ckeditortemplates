@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.3 (unreleased)
-----------------
+0.2.1 (2014-04-18)
+------------------
 
 - Fix accents errors, decode content to utf-8.
   [bsuttor]
