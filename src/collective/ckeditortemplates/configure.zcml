@@ -10,12 +10,14 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="five.grok" />
+  <include file="profiles.zcml" />
 
   <include package="plone.app.dexterity" />
   <include package="plone.directives.form" file="meta.zcml" />
   <include package="plone.directives.form" />
   <include package="plone.supermodel" />
 
+  <include package=".browser" />
   <include package=".browser" />
 
   <grok:grok package=".cktemplate" />
@@ -44,14 +46,6 @@
       image="cktemplate_icon.gif"
       />
 
-  <genericsetup:importStep
-      name="collective.ckeditortemplates"
-      title="policy.bric: miscellaneous import steps"
-      description="Various import steps that are not handled by GS import/export handlers."
-      handler="collective.ckeditortemplates.setuphandlers.setupVarious">
-      <depends name="types"/>
-  </genericsetup:importStep>
-
-  <i18n:registerTranslations directory="locales" />
+ <i18n:registerTranslations directory="locales" />
 
 </configure>

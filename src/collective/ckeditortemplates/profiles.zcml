@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.ckeditortemplates">
+
+  <genericsetup:importStep
+      name="collective.ckeditortemplates"
+      title="collective.ckeditortemplates: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="collective.ckeditortemplates.setuphandlers.setupVarious">
+      <depends name="types"/>
+  </genericsetup:importStep>
+
+
+  <genericsetup:upgradeStep
+      title="Disable global allow for ckeditortemplates folder"
+      description="Disable global allow for ckeditortemplates folder"
+      source="*"
+      destination="0002"
+      handler=".upgrades.update_content_folder"
+      profile="collective.ckeditortemplates:default" />
+
+   <genericsetup:upgradeStep
+      title="Unindex templates and folder template"
+      description="Unindex templates and folder template"
+      source="*"
+      destination="*"
+      handler=".upgrades.unindex_alltemplates"
+      profile="collective.ckeditortemplates:default" />
+
+
+</configure>
