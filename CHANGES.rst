@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.2 (unreleased)
+0.2.2 (2014-05-23)
 ------------------
 
 - Add upgrade steps.
