@@ -21,8 +21,8 @@
       profile="collective.ckeditortemplates:default" />
 
    <genericsetup:upgradeStep
-      title="Unindex templates and folder template"
-      description="Unindex templates and folder template"
+      title="Unindex folder templates"
+      description="Unindex folder template"
       source="*"
       destination="*"
       handler=".upgrades.unindex_alltemplates"
