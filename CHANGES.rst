@@ -4,7 +4,8 @@ Changelog
 0.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Allow content type Image for cktemplatefolder/
+  [bsuttor]
 
 
 0.2.2 (2014-05-23)
