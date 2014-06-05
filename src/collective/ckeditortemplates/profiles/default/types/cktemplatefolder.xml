@@ -13,6 +13,7 @@
  <property name="allowed_content_types">
   <element value="cktemplatefolder"/>
   <element value="cktemplate"/>
+  <element value="Image"/>
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">view</property>
