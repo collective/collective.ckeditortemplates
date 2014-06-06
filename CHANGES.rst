@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.3 (unreleased)
+0.2.3 (2014-06-06)
 ------------------
 
 - Allow content type Image for cktemplatefolder/
