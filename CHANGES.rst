@@ -4,7 +4,8 @@ Changelog
 0.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Move unindex ckeditorfolder to setup installation instead of upgrade step.
+  [bsuttor]
 
 
 0.2.3 (2014-06-06)

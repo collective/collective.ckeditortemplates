@@ -21,9 +21,10 @@ def setupVarious(context):
         container.reindexObject()
         catalog = api.portal.get_tool(name='portal_catalog')
         catalog.uncatalog_object(container.absolute_url_path())
-        #from zope.interface.declarations import noLongerProvides
-
-        #from Products.Five.utilities.marker import erase
-        #from Products.CMFCore.interfaces._content import ICatalogAware
-        #erase(container, ICatalogAware)
-        #noLongerProvides(container, ICatalogAware)
+    else:
+        catalog = api.portal.get_tool(name='portal_catalog')
+        portal_types = ['cktemplatefolder']
+        for portal_type in portal_types:
+            brains = catalog(portal_type=portal_type)
+            for brain in brains:
+                catalog.uncatalog_object(brain.getObject().absolute_url_path())

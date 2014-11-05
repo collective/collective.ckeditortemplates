@@ -29,12 +29,3 @@ def update_content_folder(context):
     container.reindexObject()
     catalog = api.portal.get_tool(name='portal_catalog')
     catalog.uncatalog_object(container.absolute_url_path())
-
-
-def unindex_alltemplates(context):
-    catalog = api.portal.get_tool(name='portal_catalog')
-    portal_types = ['cktemplatefolder']
-    for portal_type in portal_types:
-        brains = catalog(portal_type=portal_type)
-        for brain in brains:
-            catalog.uncatalog_object(brain.getObject().absolute_url_path())

@@ -20,13 +20,4 @@
       handler=".upgrades.update_content_folder"
       profile="collective.ckeditortemplates:default" />
 
-   <genericsetup:upgradeStep
-      title="Unindex folder templates"
-      description="Unindex folder template"
-      source="*"
-      destination="*"
-      handler=".upgrades.unindex_alltemplates"
-      profile="collective.ckeditortemplates:default" />
-
-
 </configure>
