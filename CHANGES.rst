@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.4 (unreleased)
+0.2.4 (2014-11-05)
 ------------------
 
 - Move unindex ckeditorfolder to setup installation instead of upgrade step.
