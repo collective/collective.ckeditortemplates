@@ -47,6 +47,7 @@ setup(name='collective.ckeditortemplates',
           'plone.app.contenttypes',
           'plone.api',
           'collective.ckeditor',
+          'plone.multilingualbehavior ',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': [

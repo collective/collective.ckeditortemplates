@@ -16,6 +16,7 @@
   <include package="plone.directives.form" file="meta.zcml" />
   <include package="plone.directives.form" />
   <include package="plone.supermodel" />
+  <include package="plone.multilingualbehavior" />
 
   <include package=".browser" />
   <include package=".browser" />
