@@ -4,7 +4,8 @@ Changelog
 0.2.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add plone.multilingualbehavior behavior, cktemplate is translable now.
+  [bsuttor]
 
 
 0.2.4 (2014-11-05)
