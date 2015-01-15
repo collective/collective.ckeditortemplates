@@ -20,4 +20,12 @@
       handler=".upgrades.update_content_folder"
       profile="collective.ckeditortemplates:default" />
 
+  <genericsetup:upgradeStep
+      title="Add dx multi language behavior"
+      description="This module is now plone.app.multilingual compatible"
+      source="0002"
+      destination="0003"
+      handler=".upgrades.add_dx_language_behavior"
+      profile="collective.ckeditortemplates:default" />
+
 </configure>

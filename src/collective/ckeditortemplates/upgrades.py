@@ -4,7 +4,7 @@ from plone import api
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 
 PROFILE = 'profile-collective.ckeditortemplates:default'
-FOLDER = "ckeditortemplates"
+FOLDER = 'ckeditortemplates'
 
 
 def install_folder(site):
@@ -29,3 +29,8 @@ def update_content_folder(context):
     container.reindexObject()
     catalog = api.portal.get_tool(name='portal_catalog')
     catalog.uncatalog_object(container.absolute_url_path())
+
+
+def add_dx_language_behavior(context):
+    setup = getToolByName(context, 'portal_setup')
+    setup.runAllImportStepsFromProfile(PROFILE)
