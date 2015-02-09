@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.3.1 (2015-02-09)
 ------------------
 
 - Remove plone.multilingualbehavior because of to many bugs.
