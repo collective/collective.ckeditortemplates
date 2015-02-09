@@ -27,7 +27,6 @@
   <element value="plone.app.content.interfaces.INameFromTitle"/>
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
-  <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable" />
  </property>
  <property name="schema" />
  <property name="schema_policy">schema_policy_cktemplatefolder</property>
