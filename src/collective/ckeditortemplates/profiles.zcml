@@ -28,4 +28,13 @@
       handler=".upgrades.add_dx_language_behavior"
       profile="collective.ckeditortemplates:default" />
 
+  <genericsetup:upgradeStep
+      title="Remove dx multi language behavior"
+      description=""
+      source="0003"
+      destination="0004"
+      handler=".upgrades.remove_dx_language_behavior"
+      profile="collective.ckeditortemplates:default" />
+
+
 </configure>

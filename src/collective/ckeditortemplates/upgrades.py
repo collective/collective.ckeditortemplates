@@ -34,3 +34,9 @@ def update_content_folder(context):
 def add_dx_language_behavior(context):
     setup = getToolByName(context, 'portal_setup')
     setup.runAllImportStepsFromProfile(PROFILE)
+
+
+def remove_dx_language_behavior(context):
+    installer = api.portal.get_tool('portal_quickinstaller')
+    if installer.isProductInstalled('plone.multilingualbehavior'):
+        installer.uninstallProducts(['plone.multilingualbehavior'])
