@@ -4,6 +4,5 @@
   <dependencies>
     <dependency>profile-plone.app.dexterity:default</dependency>
     <dependency>profile-collective.ckeditor:default</dependency>
-    <dependency>profile-plone.multilingualbehavior:default</dependency>
   </dependencies>
 </metadata>
