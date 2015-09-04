@@ -24,6 +24,11 @@ class ICKTemplateFolder(model.Schema, IFolder):
 
 class CKTemplateFolder(Folder):
     grok.implements(ICKTemplateFolder)
+    
+    # This method is used by index methods.
+    # If None is returned, the linked content type is not catalogued
+    def _getCatalogTool(self):
+        return None
 
 
 class CKTemplateFolderSchemaPolicy(DexteritySchemaPolicy):
