@@ -40,3 +40,9 @@ def remove_dx_language_behavior(context):
     installer = api.portal.get_tool('portal_quickinstaller')
     if installer.isProductInstalled('plone.multilingualbehavior'):
         installer.uninstallProducts(['plone.multilingualbehavior'])
+
+
+def update_workflow(context):
+    context.runImportStepFromProfile(PROFILE, 'workflow')
+    portal_workflow = api.portal.get_tool(name='portal_workflow')
+    portal_workflow.updateRoleMappings()
