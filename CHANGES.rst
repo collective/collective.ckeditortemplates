@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.2 (unreleased)
+0.3.2 (2015-10-06)
 ------------------
 
 - Member can see ckeditortemplates, so it possible to use local roles and adding a ckeditortemplate.
