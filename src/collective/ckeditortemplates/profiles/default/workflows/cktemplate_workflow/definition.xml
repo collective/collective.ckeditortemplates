@@ -21,6 +21,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Member</permission-role>
   </permission-map>
   <permission-map name="Delete objects"
                   acquired="False">
@@ -39,6 +40,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Member</permission-role>
   </permission-map>
  </state>
 
@@ -50,6 +52,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Member</permission-role>
   </permission-map>
   <permission-map name="Delete objects"
                   acquired="False">
@@ -68,6 +71,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Member</permission-role>
   </permission-map>
  </state>
 
