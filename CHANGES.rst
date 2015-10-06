@@ -4,7 +4,11 @@ Changelog
 0.3.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Member can see ckeditortemplates, so it possible to use local roles and adding a ckeditortemplate.
+  [bsuttor]
+
+- Adding upgradesteps for workflow changes.
+  [bsuttor]
 
 
 0.3.1 (2015-02-09)
