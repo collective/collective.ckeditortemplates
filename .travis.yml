@@ -10,7 +10,7 @@ env:
 
 install:
   - mkdir -p buildout-cache/downloads
-  - python bootstrap.py -c travis.cfg 
-  - bin/buildout -c travis.cfg -q -t 7
+  - python bootstrap.py -c travis.cfg --setuptools-version=18.3.2 --buildout-version=2.4.4
+  - bin/buildout -c travis.cfg -q -t 7 
 
 script: bin/$TARGET
