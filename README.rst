@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/IMIO/collective.ckeditortemplates.png?branch=master
-   :target: http://travis-ci.org/IMIO/collective.ckeditortemplates
+.. image:: https://travis-ci.org/collective/collective.ckeditortemplates.png?branch=master
+   :target: http://travis-ci.org/collective/collective.ckeditortemplates
 
 
 .. contents::
