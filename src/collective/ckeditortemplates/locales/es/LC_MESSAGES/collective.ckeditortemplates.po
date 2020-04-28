@@ -1,0 +1,44 @@
+# Translation of collective.ckeditortemplates.pot to Spanish
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.ckeditortemplates\n"
+"POT-Creation-Date: 2014-03-06 11:00+0000\n"
+"PO-Revision-Date: 2020-04-28 08:00-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.ckeditortemplates\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ./cktemplate.py:57
+msgid "Group restriction"
+msgstr "Restricción de grupo"
+
+#: ./cktemplate.py:54
+msgid "Icon displayed before the title in the list of templates"
+msgstr "Icono visible antes del titulo en la lista de plantillas"
+
+#: ./cktemplate.py:58
+msgid "Restriction on group for the list of templates"
+msgstr "Restricción en el grupo para la lista de plantillas"
+
+#: ./cktemplate.py:53
+msgid "Template Icon"
+msgstr "Icono de la plantilla"
+
+#: ./cktemplate.py:62
+msgid "Template content"
+msgstr "Contenido de la plantilla"
+
+#: ./cktemplate.py:63
+msgid "The content that will be pasted when the template is used"
+msgstr "El contenido sera copiado cuando la plantilla es usada"

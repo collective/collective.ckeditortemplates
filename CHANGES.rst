@@ -4,7 +4,8 @@ Changelog
 0.3.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Spanish translation
+  [macagua]
 
 
 0.3.2 (2015-10-06)
