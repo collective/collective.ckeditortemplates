@@ -1,2 +1,3 @@
 - Martin Peeters, Original Author [Affinitic]
 - Benoit Suttor [IMIO]
+- Leonardo J. Caballero G. [Plone Venezuela]
