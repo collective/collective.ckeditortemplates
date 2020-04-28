@@ -1,0 +1,17 @@
+[main]
+host = https://www.transifex.com
+
+[plone-collective.collective-ckeditortemplates-pot]
+file_filter = src/collective/ckeditortemplates/locales/<lang>/LC_MESSAGES/collective.ckeditortemplates.po
+minimum_perc = 0
+source_file = src/collective/ckeditortemplates/locales/collective.ckeditortemplates.pot
+source_lang = en
+type = PO
+
+[plone-collective.collective-ckeditortemplates-plone-pot]
+file_filter = src/collective/ckeditortemplates/locales/<lang>/LC_MESSAGES/plone.po
+minimum_perc = 0
+source_file = src/collective/ckeditortemplates/locales/plone.pot
+source_lang = en
+type = PO
+
