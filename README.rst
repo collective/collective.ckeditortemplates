@@ -37,7 +37,7 @@ Install collective.ckeditortemplates by adding it to your buildout:
         collective.ckeditortemplates
 
 
-and then running "bin/buildout"
+and then running "bin/buildout", next enable the product in your plone site.
 
 
 Translations
