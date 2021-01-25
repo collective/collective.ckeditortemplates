@@ -24,7 +24,7 @@ class ICKTemplateFolder(model.Schema, IFolder):
 
 class CKTemplateFolder(Folder):
     grok.implements(ICKTemplateFolder)
-    
+
     # This method is used by index methods.
     # If None is returned, the linked content type is not catalogued
     def _getCatalogTool(self):
@@ -60,7 +60,7 @@ class CKTemplate(Document):
 
     @property
     def html(self):
-        soup = BeautifulSoup(self.content.raw)
+        soup = BeautifulSoup(self.content.raw, features='lxml')
         soup.html.hidden = True
         soup.body.hidden = True
 

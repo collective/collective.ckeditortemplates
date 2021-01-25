@@ -10,6 +10,8 @@ Changelog
   [macagua]
 - Corrected bad import step requirement
   [sgeulette]
+- Added features param on BeautifulSoup init
+  [sgeulette]
 
 0.3.2 (2015-10-06)
 ------------------
