@@ -25,9 +25,13 @@ Add and use cktemplate
     Click Link  id=cktemplate
 
     Input Text  id=form-widgets-IDublinCore-title  ${cktemplate_name}
+    Sleep  0.5
     Execute JavaScript  CKEDITOR.instances['form.widgets.content'].insertHtml('<h1>My title</h1>')
+    Sleep  0.5
     Submit Form  form
+    Sleep  1
     Click button  id=form-buttons-save
+    Sleep  0.5
     Page Should Contain  Item created
     Page should contain  ${cktemplate_name}
     Open Menu  plone-contentmenu-workflow
@@ -38,7 +42,9 @@ Add and use cktemplate
     Click Link  id=document
 
     Input Text  title  My doc with template
+    Sleep  0.5
     Execute JavaScript  CKEDITOR.instances['text'].commands.templates.exec()
+    Sleep  0.5
     Page should contain  ${cktemplate_name}
 
 
