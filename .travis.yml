@@ -13,7 +13,8 @@ install:
   - mkdir -p buildout-cache/downloads
   - virtualenv .
   - bin/pip install -r requirements.txt
-  - bin/buildout -c travis.cfg -q -t 7 
+  - bin/buildout -c travis.cfg -q -t 7 annotate
+  - bin/buildout -vNc travis.cfg -q -t 7
 
 after_success:
   - bin/createcoverage
