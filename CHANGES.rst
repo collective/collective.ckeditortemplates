@@ -12,6 +12,8 @@ Changelog
   [sgeulette]
 - Added features param on BeautifulSoup init
   [sgeulette]
+- Degroked package
+  [sgeulette]
 
 0.3.2 (2015-10-06)
 ------------------

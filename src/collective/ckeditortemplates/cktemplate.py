@@ -1,19 +1,16 @@
 # encoding: utf-8
 from bs4 import BeautifulSoup
-
-from zope.i18nmessageid import MessageFactory
-
-from plone.app.contenttypes.content import Folder
+from collective.ckeditortemplates import _
 from plone.app.contenttypes.content import Document
-from plone.app.contenttypes.interfaces import IFolder
+from plone.app.contenttypes.content import Folder
 from plone.app.contenttypes.interfaces import IDocument
+from plone.app.contenttypes.interfaces import IFolder
 from plone.app.textfield import RichText
-from plone.namedfile.field import NamedImage
 from plone.dexterity.schema import DexteritySchemaPolicy
+from plone.namedfile.field import NamedImage
 from plone.supermodel import model
-from five import grok
-
-from . import _
+from zope.i18nmessageid import MessageFactory
+from zope.interface import implements
 
 PMF = MessageFactory('plone')
 
@@ -23,7 +20,7 @@ class ICKTemplateFolder(model.Schema, IFolder):
 
 
 class CKTemplateFolder(Folder):
-    grok.implements(ICKTemplateFolder)
+    implements(ICKTemplateFolder)
 
     # This method is used by index methods.
     # If None is returned, the linked content type is not catalogued
@@ -51,7 +48,7 @@ class ICKTemplate(model.Schema, IDocument):
 
 
 class CKTemplate(Document):
-    grok.implements(ICKTemplate)
+    implements(ICKTemplate)
 
     @property
     def image(self):

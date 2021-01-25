@@ -1,13 +1,9 @@
 # encoding: utf-8
-from five import grok
 
-from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
+from z3c.form import form
 
 
-class CKTemplateListingView(grok.View):
-    grok.context(IPloneSiteRoot)
-    grok.name('cktemplate-listing.js')
-    grok.require('zope2.View')
+class CKTemplateListingView(form.Form):
 
     def get_templates(self):
         templates = []
