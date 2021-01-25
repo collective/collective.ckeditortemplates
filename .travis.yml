@@ -8,15 +8,18 @@ python: 2.7
 before_install:
   - 'export DISPLAY=:99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-env:
-  - TARGET=test
-  - TARGET=coverage.sh
-  - TARGET=code-analysis
 
 install:
   - mkdir -p buildout-cache/downloads
-  - virtualenv-2.7 .
+  - virtualenv .
   - bin/pip install -r requirements.txt
   - bin/buildout -c travis.cfg -q -t 7 
 
-script: bin/$TARGET
+after_success:
+  - bin/createcoverage
+  - pip install -q coveralls
+  - coveralls
+
+script:
+  - bin/code-analysis
+  - bin/test
