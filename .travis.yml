@@ -1,8 +1,13 @@
 language: python
+sudo: false
+cache:
+  pip: true
+  directories:
+  - eggs
 python: 2.7
 before_install:
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
+  - 'export DISPLAY=:99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 env:
   - TARGET=test
   - TARGET=coverage.sh
@@ -10,7 +15,7 @@ env:
 
 install:
   - mkdir -p buildout-cache/downloads
-  - python bootstrap.py -c travis.cfg --setuptools-version=18.3.2 --buildout-version=2.4.4
+  - make setup
   - bin/buildout -c travis.cfg -q -t 7 
 
 script: bin/$TARGET
