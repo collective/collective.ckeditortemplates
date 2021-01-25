@@ -1,5 +1,5 @@
 # encoding: utf-8
-import unittest2
+import unittest
 
 from .. import cktemplate
 from ..testing import CKTEMPLATES_INTEGRATION_TESTING
