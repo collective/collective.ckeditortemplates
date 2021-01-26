@@ -1,5 +1,5 @@
 # encoding: utf-8
-import unittest2
+import unittest
 from mock import Mock
 
 from zope.publisher.browser import TestRequest
@@ -8,7 +8,7 @@ from .. import cktemplatelisting
 from ...testing import CKTEMPLATES_INTEGRATION_TESTING
 
 
-class TestCKTemplateListingView(unittest2.TestCase):
+class TestCKTemplateListingView(unittest.TestCase):
     layer = CKTEMPLATES_INTEGRATION_TESTING
 
     def setUp(self):

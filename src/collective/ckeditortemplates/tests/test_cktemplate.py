@@ -5,7 +5,7 @@ from .. import cktemplate
 from ..testing import CKTEMPLATES_INTEGRATION_TESTING
 
 
-class TestCKTemplate(unittest2.TestCase):
+class TestCKTemplate(unittest.TestCase):
     layer = CKTEMPLATES_INTEGRATION_TESTING
 
     def test_html_simple(self):
