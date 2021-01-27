@@ -14,6 +14,8 @@ Changelog
   [sgeulette]
 - Degroked package
   [sgeulette]
+- Made the enabled state criteria a class variable, so it can be overrided.
+  [sgeulette]
 
 0.3.2 (2015-10-06)
 ------------------
