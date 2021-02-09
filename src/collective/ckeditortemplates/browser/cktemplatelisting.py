@@ -7,12 +7,14 @@ class CKTemplateListingView(form.Form):
     """View used to get a listing of custom ckeditor templates."""
 
     enabled_states = ('enabled',)
+    sort_on = 'sortable_title'
 
     def get_templates(self):
         """Get enabled templates."""
         templates = []
         for brain in self.context.portal_catalog(portal_type='cktemplate',
-                                                 review_state=self.enabled_states):
+                                                 review_state=self.enabled_states,
+                                                 sort_on=self.sort_on):
             templates.append((brain.getObject(), brain.getPath()))
         return templates
 
