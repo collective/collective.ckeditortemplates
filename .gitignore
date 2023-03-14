@@ -3,10 +3,13 @@
 *.pyc
 .installed.cfg
 .mr.developer.cfg
+.plone-version
+.plone.versioncheck*
 .project
 .pydevproject
 .settings/
 bin/
+checkversion*
 develop-eggs/
 parts/
 var/

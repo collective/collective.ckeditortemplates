@@ -1,0 +1,52 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Push tests
+
+on:
+  push:
+  pull_request:
+
+env:
+  coverage-python: "3.10"
+  coverage-plone: "6.0"
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: 2.7
+            plone: 4.3
+#          - python: 3.7
+#            plone: 5.2
+#          - python: "3.10"
+#            plone: "6.0"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Setup Env
+        run: |
+          pip install -r requirements-${{ matrix.plone }}.txt
+      - name: Cache eggs
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-eggs
+        with:
+          path: ~/buildout-cache/eggs
+          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ matrix.plone }}
+          restore-keys: ${{ runner.os }}-test-${{ env.cache-name }}-${{ matrix.plone }}
+      - name: buildout
+        run: |
+          sed -ie "s#test.cfg#test-${{matrix.plone}}.cfg#" gha.cfg
+          buildout -c gha.cfg annotate
+          buildout -c gha.cfg
+      - name: test
+        run: |
+          bin/test -t !robot
