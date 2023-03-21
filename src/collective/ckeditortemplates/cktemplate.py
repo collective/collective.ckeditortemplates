@@ -9,8 +9,9 @@ from plone.app.textfield import RichText
 from plone.dexterity.schema import DexteritySchemaPolicy
 from plone.namedfile.field import NamedImage
 from plone.supermodel import model
+from Products.CMFPlone.utils import safe_unicode
 from zope.i18nmessageid import MessageFactory
-from zope.interface import implements
+from zope.interface import implementer
 
 
 PMF = MessageFactory('plone')
@@ -20,8 +21,8 @@ class ICKTemplateFolder(model.Schema, IFolder):
     """ Schema for CKEditor template folder """
 
 
+@implementer(ICKTemplateFolder)
 class CKTemplateFolder(Folder):
-    implements(ICKTemplateFolder)
 
     # This method is used by index methods.
     # If None is returned, the linked content type is not catalogued
@@ -48,8 +49,8 @@ class ICKTemplate(model.Schema, IDocument):
                        required=True)
 
 
+@implementer(ICKTemplate)
 class CKTemplate(Document):
-    implements(ICKTemplate)
 
     @property
     def image(self):
@@ -64,7 +65,7 @@ class CKTemplate(Document):
 
         # Replace quotes in contents
         for element in soup.findAll(text=True):
-            text = unicode(element)
+            text = safe_unicode(element)
             text = text.replace(u'"', u'U+0022')
             text = text.strip()
             element.replaceWith(text)
