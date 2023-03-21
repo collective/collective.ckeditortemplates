@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
 from plone import api
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from Products.CMFCore.utils import getToolByName
+
 
 PROFILE = 'profile-collective.ckeditortemplates:default'
 FOLDER = 'ckeditortemplates'

@@ -1,11 +1,10 @@
 # encoding: utf-8
-import unittest
+from collective.ckeditortemplates.browser import cktemplatelisting
+from collective.ckeditortemplates.testing import CKTEMPLATES_INTEGRATION_TESTING
 from mock import Mock
-
 from zope.publisher.browser import TestRequest
 
-from .. import cktemplatelisting
-from ...testing import CKTEMPLATES_INTEGRATION_TESTING
+import unittest
 
 
 class TestCKTemplateListingView(unittest.TestCase):

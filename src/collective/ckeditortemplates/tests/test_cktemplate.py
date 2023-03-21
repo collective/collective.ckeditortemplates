@@ -1,8 +1,8 @@
 # encoding: utf-8
-import unittest
+from collective.ckeditortemplates import cktemplate
+from collective.ckeditortemplates.testing import CKTEMPLATES_INTEGRATION_TESTING
 
-from .. import cktemplate
-from ..testing import CKTEMPLATES_INTEGRATION_TESTING
+import unittest
 
 
 class TestCKTemplate(unittest.TestCase):

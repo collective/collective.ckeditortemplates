@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+from collective.ckeditortemplates.testing import CKTEMPLATES_ROBOT_TESTING
 from plone.testing import layered
+
 import robotsuite
 import unittest
-
-from collective.ckeditortemplates.testing import CKTEMPLATES_ROBOT_TESTING
 
 
 def test_suite():

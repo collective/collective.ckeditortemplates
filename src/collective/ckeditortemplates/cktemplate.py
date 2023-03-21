@@ -12,6 +12,7 @@ from plone.supermodel import model
 from zope.i18nmessageid import MessageFactory
 from zope.interface import implements
 
+
 PMF = MessageFactory('plone')
 
 
