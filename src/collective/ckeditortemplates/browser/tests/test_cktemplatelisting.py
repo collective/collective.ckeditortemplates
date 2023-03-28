@@ -32,9 +32,9 @@ class TestCKTemplateListingView(unittest.TestCase):
         template = type('template', (object, ), {
             u'title': u'My "title"',
             u'custom_icon': True,
-            u'image': 'icon.jpg',
+            u'image': lambda: 'icon.jpg',
             u'description': u'Template "description"',
-            u'html': u'<h1>My title</h1>'})
+            u'html': lambda: u'<h1>My title</h1>'})
         render = (u'{title: "My &quot;title&quot;", '
                   u'image: "/template/icon.jpg", '
                   u'description: "Template &quot;description&quot;", '

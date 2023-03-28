@@ -43,9 +43,9 @@ class CKTemplateListingView(form.Form):
                 'html: "%(html)s"}')
         icon = ''
         if template.custom_icon is not None:
-            icon = 'image: "%s/%s", ' % (path, template.image)
+            icon = 'image: "%s/%s", ' % (path, template.image())
         return base % {
             u'title': template.title.replace('"', '&quot;'),
             u'image': icon,
             u'description': template.description.replace('"', '&quot;'),
-            u'html': template.html}
+            u'html': template.html()}

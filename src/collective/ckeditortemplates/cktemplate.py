@@ -52,12 +52,10 @@ class ICKTemplate(model.Schema, IDocument):
 @implementer(ICKTemplate)
 class CKTemplate(Document):
 
-    @property
     def image(self):
         return (u"view/++widget++form.widgets.custom_icon/@@download/%s" %
                 self.custom_icon.filename)
 
-    @property
     def html(self):
         soup = BeautifulSoup(self.content.raw, features='lxml')
         soup.html.hidden = True
@@ -71,7 +69,7 @@ class CKTemplate(Document):
             element.replaceWith(text)
         # Remove new lines an carriage returns
         content = ''.join(str(soup).splitlines())
-        content = content.decode('utf-8')
+        content = safe_unicode(content)
         content = content.replace('"', "'")
         content = content.replace(u'U+0022', u'&quot;')
         return content.strip()
