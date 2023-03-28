@@ -3,7 +3,7 @@
 # plone parameter must be passed to create environment or after a make cleanall
 
 SHELL=/bin/bash
-plones=4.3 5.2 6.0
+plones=4.3 6.0
 b_o=
 old_plone=$(shell [ -e .plone-version ] && cat .plone-version)
 
