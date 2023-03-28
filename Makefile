@@ -5,13 +5,14 @@
 SHELL=/bin/bash
 plones=4.3 5.2 6.0
 b_o=
+old_plone=$(shell [ -e .plone-version ] && cat .plone-version)
 
 ifeq (, $(shell which pyenv))
   $(error "pyenv command not found! Aborting")
 endif
 
 ifndef plone
-  plone=$(shell [ -e .plone-version ] && cat .plone-version)
+  plone=$(old_plone)
   b_o=-N
 endif
 
@@ -45,7 +46,7 @@ bin/buildout: .python-version  ## Setups environment
 	@echo "$(plone)" > .plone-version
 
 .PHONY: setup
-setup: oneof-plone cleanall bin/buildout ## Setups environment
+setup: oneof-plone backup cleanall bin/buildout restore  ## Setups environment
 
 .PHONY: buildout
 buildout: oneof-plone bin/buildout  ## Runs setup and buildout
@@ -56,11 +57,20 @@ buildout: oneof-plone bin/buildout  ## Runs setup and buildout
 cleanall:  ## Cleans all installed buildout files
 	rm -fr bin include lib local share develop-eggs downloads eggs parts .installed.cfg .mr.developer.cfg .python-version .plone-version pyvenv.cfg
 
+.PHONY: backup
+backup:  ## Backups db files
+	@if [ $(old_plone) != '' ] && [ -f var/filestorage/Data.fs ]; then mv var/filestorage/Data.fs var/filestorage/Data.fs.$(old_plone); mv var/blobstorage var/blobstorage.$(old_plone); fi
+
+.PHONY: restore
+restore:  ## Restores db files
+	@if [ $(plone) != '' ] && [ -f var/filestorage/Data.fs.$(plone) ]; then mv var/filestorage/Data.fs.$(plone) var/filestorage/Data.fs; mv var/blobstorage.$(plone) var/blobstorage; fi
+
 .PHONY: which-python
 which-python: oneof-plone  ## Displays versions information
+	@echo "current plone = $(old_plone)"
+	@echo "current python = `cat .python-version`"
 	@echo "plone var = $(plone)"
 	@echo "python var = $(python)"
-	@echo "python env = `cat .python-version`"
 
 .PHONY: vcr
 vcr:  ## Shows requirements in checkversion-r.html
