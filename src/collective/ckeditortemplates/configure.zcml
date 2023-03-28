@@ -15,14 +15,6 @@
 
   <include package=".browser" />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.ckeditortemplates"
-      directory="profiles/default"
-      description="Installs the collective.ckeditortemplates package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
   <utility factory=".cktemplate.CKTemplateSchemaPolicy"
            name="schema_policy_cktemplate" />
 
