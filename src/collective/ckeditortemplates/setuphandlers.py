@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from plone import api
-from Products.CMFCore.utils import getToolByName
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from Products.CMFCore.utils import getToolByName
+
 
 FOLDER = "ckeditortemplates"
 

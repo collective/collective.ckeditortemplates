@@ -1,7 +1,34 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.ckeditortemplates">
+
+  <genericsetup:registerProfile
+      name="install-base"
+      title="collective.ckeditortemplates base"
+      directory="profiles/default"
+      description="Base of collective.ckeditortemplates package: do not select, use other installation package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      zcml:condition="not-have plone-5"
+      name="default"
+      title="collective.ckeditortemplates installation"
+      directory="profiles/plone4"
+      description="Installs the collective.ckeditortemplates package for Plone 4"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      zcml:condition="have plone-60"
+      name="default"
+      title="collective.ckeditortemplates installation"
+      directory="profiles/plone6"
+      description="Installs the collective.ckeditortemplates package for Plone 6"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
   <genericsetup:importStep
       name="collective.ckeditortemplates"
@@ -10,7 +37,6 @@
       handler="collective.ckeditortemplates.setuphandlers.setupVarious">
       <depends name="typeinfo"/>
   </genericsetup:importStep>
-
 
   <genericsetup:upgradeStep
       title="Disable global allow for ckeditortemplates folder"

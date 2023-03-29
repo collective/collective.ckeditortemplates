@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
+from collective.ckeditortemplates import PLONE_VERSION
 from plone import api
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from Products.CMFCore.utils import getToolByName
+
 
 PROFILE = 'profile-collective.ckeditortemplates:default'
 FOLDER = 'ckeditortemplates'
@@ -37,9 +39,15 @@ def add_dx_language_behavior(context):
 
 
 def remove_dx_language_behavior(context):
-    installer = api.portal.get_tool('portal_quickinstaller')
-    if installer.isProductInstalled('plone.multilingualbehavior'):
-        installer.uninstallProducts(['plone.multilingualbehavior'])
+    if PLONE_VERSION >= '5.1':
+        from Products.CMFPlone.utils import get_installer  # noqa
+        installer = get_installer(context)
+        if installer.is_product_installed('plone.multilingualbehavior'):
+            installer.uninstall_product('plone.multilingualbehavior')
+    else:
+        installer = api.portal.get_tool('portal_quickinstaller')  # noqa
+        if installer.isProductInstalled('plone.multilingualbehavior'):
+            installer.uninstallProducts(['plone.multilingualbehavior'])
 
 
 def update_workflow(context):
