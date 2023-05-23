@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4.0 (unreleased)
+0.9.0 (2023-05-23)
 ------------------
 
 - Made compatible Plone 4.3 and Plone 6.0
