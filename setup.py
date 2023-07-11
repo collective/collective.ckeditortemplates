@@ -45,7 +45,7 @@ setup(name='collective.ckeditortemplates',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'beautifulsoup4',
+          'beautifulsoup4<=4.11.2',
           'Plone',
           'plone.app.contenttypes',
           'plone.api',
