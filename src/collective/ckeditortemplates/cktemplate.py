@@ -67,7 +67,7 @@ class CKTemplate(Document):
             text = text.replace(u'"', u'U+0022')
             text = text.strip()
             element.replaceWith(text)
-        # Remove new lines an carriage returns
+        # Remove new lines and carriage returns
         content = ''.join(str(soup).splitlines())
         content = safe_unicode(content)
         content = content.replace('"', "'")
