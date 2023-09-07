@@ -4,8 +4,10 @@ Changelog
 0.9.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fixed bs4 version to have same behaviour in p4 and p6
+  [sgeulette]
+- Updated setup
+  [sgeulette]
 
 0.9.0 (2023-05-23)
 ------------------
