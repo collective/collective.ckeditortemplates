@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.1 (unreleased)
+0.9.1 (2023-11-28)
 ------------------
 
 - Fixed bs4 version to have same behaviour in p4 and p6
