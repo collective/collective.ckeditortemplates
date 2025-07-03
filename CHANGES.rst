@@ -4,7 +4,8 @@ Changelog
 0.9.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added Plone 6.1 support.
+  [chris-adam]
 
 
 0.9.1 (2023-11-28)
