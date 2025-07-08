@@ -6,7 +6,6 @@
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/ckeditortemplates"
-        icon_expr="string:${portal_url}/++resource++ckeditor_for_plone/ckeditor_icon.png"
         visible="True"
         remove="True">
     </configlet>
