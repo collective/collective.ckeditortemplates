@@ -15,7 +15,9 @@ def setupVarious(context):
     if not site.get(FOLDER):
         types = getToolByName(site, "portal_types")
         types.getTypeInfo("cktemplatefolder").global_allow = True
-        container = api.content.create(site, "cktemplatefolder", id=FOLDER, title=FOLDER)
+        container = api.content.create(
+            site, "cktemplatefolder", id=FOLDER, title=FOLDER
+        )
         excl = IExcludeFromNavigation(container)
         excl.exclude_from_nav = True
         types.getTypeInfo("cktemplatefolder").global_allow = False
@@ -44,7 +46,12 @@ def uninstall_product(context):
         default=[],
     )
     if custom_templates:
-        templates = [template for template in custom_templates if template != "cktemplate-listing.js"]
+        templates = [
+            template
+            for template in custom_templates
+            if template != "cktemplate-listing.js"
+        ]
         api.portal.set_registry_record(
-            "collective.ckeditor.browser.ckeditorsettings.ICKEditorSchema.customTemplates", templates
+            "collective.ckeditor.browser.ckeditorsettings.ICKEditorSchema.customTemplates",
+            templates,
         )

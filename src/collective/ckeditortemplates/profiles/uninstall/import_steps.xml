@@ -1,14 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <import-steps>
-  <import-step
-      id="collective.ckeditortemplates.uninstall_cleanup"
-      handler="collective.ckeditortemplates.setuphandlers.uninstall_product"
-      title="Clean portal_setup for collective.ckeditortemplates uninstall"
-      version="2025-07-07">
-    <dependency step="controlpanel"/>
-    <dependency step="typeinfo"/>
-    <dependency step="workflow"/>
-    <dependency step="rolemap"/>
+  <import-step id="collective.ckeditortemplates.uninstall_cleanup"
+               handler="collective.ckeditortemplates.setuphandlers.uninstall_product"
+               title="Clean portal_setup for collective.ckeditortemplates uninstall"
+               version="2025-07-07"
+  >
+    <dependency step="controlpanel" />
+    <dependency step="typeinfo" />
+    <dependency step="workflow" />
+    <dependency step="rolemap" />
     manual coded uninstall
   </import-step>
 </import-steps>

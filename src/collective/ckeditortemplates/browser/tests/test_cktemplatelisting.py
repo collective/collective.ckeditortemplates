@@ -16,13 +16,12 @@ class TestCKTemplateListingView(unittest.TestCase):
     layer = CKTEMPLATES_INTEGRATION_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
+        self.portal = self.layer["portal"]
         request = TestRequest()
-        self.view = cktemplatelisting.CKTemplateListingView(self.portal,
-                                                            request)
+        self.view = cktemplatelisting.CKTemplateListingView(self.portal, request)
 
     def test_render(self):
-        self.view.get_templates = Mock(return_value=[(None, u'/template')])
+        self.view.get_templates = Mock(return_value=[(None, u"/template")])
         self.view.render_template = Mock(return_value=u"{render}")
         render = """CKEDITOR.addTemplates('default',
 {
@@ -34,11 +33,19 @@ class TestCKTemplateListingView(unittest.TestCase):
         self.assertEqual(render, self.view.render())
 
     def test_render_template(self):
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        template = api.content.create(self.portal.ckeditortemplates, 'cktemplate', 'test1', 'My &quot;title&quot;',
-                                      description="Template &quot;description&quot;",
-                                      content=RichTextValue(raw=safe_unicode(u'<h1>My title</h1>'),
-                                                            mimeType=u"text/html", outputMimeType=u"text/x-html-safe"))
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        template = api.content.create(
+            self.portal.ckeditortemplates,
+            "cktemplate",
+            "test1",
+            "My &quot;title&quot;",
+            description="Template &quot;description&quot;",
+            content=RichTextValue(
+                raw=safe_unicode(u"<h1>My title</h1>"),
+                mimeType=u"text/html",
+                outputMimeType=u"text/x-html-safe",
+            ),
+        )
         # the following is not working on python 2
         # template = type('template', (object, ), {
         #     u'title': u'My "title"',
@@ -46,8 +53,10 @@ class TestCKTemplateListingView(unittest.TestCase):
         #     u'image': lambda: 'icon.jpg',
         #     u'description': u'Template "description"',
         #     u'html': lambda: u'<h1>My title</h1>'})
-        render = (u'{title: "My &quot;title&quot;", '
-                  # u'image: "/template/icon.jpg", '
-                  u'description: "Template &quot;description&quot;", '
-                  u'html: "<h1>My title</h1>"}')
-        self.assertEqual(render, self.view.render_template(template, u'/template'))
+        render = (
+            u'{title: "My &quot;title&quot;", '
+            # u'image: "/template/icon.jpg", '
+            u'description: "Template &quot;description&quot;", '
+            u'html: "<h1>My title</h1>"}'
+        )
+        self.assertEqual(render, self.view.render_template(template, u"/template"))

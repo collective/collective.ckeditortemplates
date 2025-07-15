@@ -22,10 +22,14 @@ class TestSetup(unittest.TestCase):
     def test_product_installed(self):
         """Test if collective.ckeditortemplates is installed with portal_quickinstaller."""
         if HAS_PLONE_6_AND_MORE:
-            self.assertTrue(self.installer.is_product_installed("collective.ckeditortemplates"))
+            self.assertTrue(
+                self.installer.is_product_installed("collective.ckeditortemplates")
+            )
 
     def test_uninstall(self):
         """Test if collective.ckeditortemplates is cleanly uninstalled."""
         if HAS_PLONE_6_AND_MORE:
             self.installer.uninstall_product("collective.ckeditortemplates")
-            self.assertFalse(self.installer.is_product_installed("collective.ckeditortemplates"))
+            self.assertFalse(
+                self.installer.is_product_installed("collective.ckeditortemplates")
+            )

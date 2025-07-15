@@ -1,167 +1,203 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-             i18n:domain="plone"
-             workflow_id="cktemplate_workflow"
-             title="cktemplate_workflow"
              description=""
-             state_variable="review_state"
              initial_state="disabled"
-             i18n:attributes="title; description">
+             state_variable="review_state"
+             title="cktemplate_workflow"
+             workflow_id="cktemplate_workflow"
+             i18n:attributes="title; description"
+             i18n:domain="plone"
+>
 
- <permission>Access contents information</permission>
- <permission>Modify portal content</permission>
- <permission>View</permission>
- <permission>Delete objects</permission>
+  <permission>Access contents information</permission>
+  <permission>Modify portal content</permission>
+  <permission>View</permission>
+  <permission>Delete objects</permission>
 
- <state state_id="disabled" title="disabled" i18n:attributes="title">
-  <description i18n:translate=""></description>
-  <exit-transition transition_id="enable"/>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Member</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Member</permission-role>
-  </permission-map>
- </state>
+  <state state_id="disabled"
+         title="disabled"
+         i18n:attributes="title"
+  >
+    <description i18n:translate="" />
+    <exit-transition transition_id="enable" />
+    <permission-map acquired="False"
+                    name="Access contents information"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Member</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Delete objects"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Owner</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Modify portal content"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Owner</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="View"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Member</permission-role>
+    </permission-map>
+  </state>
 
- <state state_id="enabled" title="enabled" i18n:attributes="title">
-  <description i18n:translate=""></description>
-  <exit-transition transition_id="disable"/>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Member</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Member</permission-role>
-  </permission-map>
- </state>
+  <state state_id="enabled"
+         title="enabled"
+         i18n:attributes="title"
+  >
+    <description i18n:translate="" />
+    <exit-transition transition_id="disable" />
+    <permission-map acquired="False"
+                    name="Access contents information"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Member</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Delete objects"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Owner</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Modify portal content"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Owner</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="View"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Member</permission-role>
+    </permission-map>
+  </state>
 
- <transition transition_id="disable"
-             title="disable"
-             new_state="disabled"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <description i18n:translate=""></description>
-  <action url="" category="workflow">disable</action>
-  <guard>
-    <guard-role>Manager</guard-role>
-    <guard-role>Editor</guard-role>
-    <guard-role>Owner</guard-role>
-  </guard>
- </transition>
+  <transition after_script=""
+              before_script=""
+              new_state="disabled"
+              title="disable"
+              transition_id="disable"
+              trigger="USER"
+              i18n:attributes="title"
+  >
+    <description i18n:translate="" />
+    <action category="workflow"
+            url=""
+    >disable</action>
+    <guard>
+      <guard-role>Manager</guard-role>
+      <guard-role>Editor</guard-role>
+      <guard-role>Owner</guard-role>
+    </guard>
+  </transition>
 
- <transition transition_id="enable"
-             title="enable"
-             new_state="enabled"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <description i18n:translate=""></description>
-  <action url="" category="workflow">enable</action>
-  <guard>
-    <guard-role>Manager</guard-role>
-    <guard-role>Editor</guard-role>
-    <guard-role>Owner</guard-role>
-  </guard>
- </transition>
+  <transition after_script=""
+              before_script=""
+              new_state="enabled"
+              title="enable"
+              transition_id="enable"
+              trigger="USER"
+              i18n:attributes="title"
+  >
+    <description i18n:translate="" />
+    <action category="workflow"
+            url=""
+    >enable</action>
+    <guard>
+      <guard-role>Manager</guard-role>
+      <guard-role>Editor</guard-role>
+      <guard-role>Owner</guard-role>
+    </guard>
+  </transition>
 
- <variable variable_id="action" for_catalog="False"
-           for_status="True" update_always="True">
-  <description i18n:translate="">Previous transition</description>
-  <default>
-   <expression>transition/getId|nothing</expression>
-  </default>
-  <guard>
-  </guard>
- </variable>
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="action"
+  >
+    <description i18n:translate="">Previous transition</description>
+    <default>
+      <expression>transition/getId|nothing</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
 
- <variable variable_id="actor" for_catalog="False"
-           for_status="True" update_always="True">
-  <description i18n:translate="">
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="actor"
+  >
+    <description i18n:translate="">
     The ID of the user who performed the last transition
   </description>
-  <default>
-   <expression>user/getId</expression>
-  </default>
-  <guard>
-  </guard>
- </variable>
+    <default>
+      <expression>user/getId</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
 
- <variable variable_id="comments" for_catalog="False"
-           for_status="True" update_always="True">
-  <description i18n:translate="">Comment about the last transition</description>
-  <default>
-   <expression>python:state_change.kwargs.get('comment', '')</expression>
-  </default>
-  <guard>
-  </guard>
- </variable>
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="comments"
+  >
+    <description i18n:translate="">Comment about the last transition</description>
+    <default>
+      <expression>python:state_change.kwargs.get('comment', '')</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
 
- <variable variable_id="review_history" for_catalog="False"
-           for_status="False" update_always="False">
-  <description i18n:translate="">Provides access to workflow history</description>
-  <default>
+  <variable for_catalog="False"
+            for_status="False"
+            update_always="False"
+            variable_id="review_history"
+  >
+    <description i18n:translate="">Provides access to workflow history</description>
+    <default>
 
-   <expression>state_change/getHistory</expression>
-  </default>
-  <guard>
-   <guard-permission>Request review</guard-permission>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </variable>
+      <expression>state_change/getHistory</expression>
+    </default>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </variable>
 
- <variable variable_id="time" for_catalog="False"
-           for_status="True" update_always="True">
-  <description i18n:translate="">
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="time"
+  >
+    <description i18n:translate="">
     When the previous transition was performed
   </description>
-  <default>
-   <expression>state_change/getDateTime</expression>
-  </default>
-  <guard>
-  </guard>
- </variable>
+    <default>
+      <expression>state_change/getDateTime</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
 
 </dc-workflow>

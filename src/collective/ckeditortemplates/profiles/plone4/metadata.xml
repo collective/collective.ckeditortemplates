@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <metadata>
-   <dependencies>
+  <dependencies>
     <dependency>profile-collective.ckeditortemplates:install-base</dependency>
-   </dependencies>
+  </dependencies>
   <version>0005</version>
 </metadata>

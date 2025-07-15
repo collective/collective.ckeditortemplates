@@ -1,13 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <object name="portal_controlpanel">
- <configlet title="CKEditor templates" 
-            action_id="CKEditor templates" 
-            appId="collective.ckeditortemplates"
-            category="Products"
-            condition_expr=""
-            url_expr="string:${portal_url}/ckeditortemplates"
-            icon_expr="string:${portal_url}/++resource++ckeditor_for_plone/ckeditor_icon.png"
-            visible="True" >
-  <permission>Manage portal</permission>
- </configlet>
+  <configlet action_id="CKEditor templates"
+             appId="collective.ckeditortemplates"
+             category="Products"
+             condition_expr=""
+             icon_expr="string:${portal_url}/++resource++ckeditor_for_plone/ckeditor_icon.png"
+             title="CKEditor templates"
+             url_expr="string:${portal_url}/ckeditortemplates"
+             visible="True"
+  >
+    <permission>Manage portal</permission>
+  </configlet>
 </object>

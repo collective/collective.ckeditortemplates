@@ -2,81 +2,87 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="collective.ckeditortemplates">
+    i18n_domain="collective.ckeditortemplates"
+    >
 
   <genericsetup:registerProfile
       name="install-base"
       title="collective.ckeditortemplates base"
-      directory="profiles/default"
       description="Base of collective.ckeditortemplates package: do not select, use other installation package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
       />
 
   <genericsetup:registerProfile
-      zcml:condition="not-have plone-5"
       name="default"
       title="collective.ckeditortemplates installation"
-      directory="profiles/plone4"
       description="Installs the collective.ckeditortemplates package for Plone 4"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/plone4"
+      zcml:condition="not-have plone-5"
       />
 
   <genericsetup:registerProfile
-      zcml:condition="have plone-60"
       name="default"
       title="collective.ckeditortemplates installation"
-      directory="profiles/plone6"
       description="Installs the collective.ckeditortemplates package for Plone 6"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/plone6"
+      zcml:condition="have plone-60"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      zcml:condition="have plone-60"
       title="collective.ckeditortemplates uninstall"
-      directory="profiles/uninstall"
       description="collective.ckeditortemplates"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      zcml:condition="have plone-60"
       />
 
   <genericsetup:importStep
       name="collective.ckeditortemplates"
       title="collective.ckeditortemplates: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
-      handler="collective.ckeditortemplates.setuphandlers.setupVarious">
-      <depends name="typeinfo"/>
+      handler="collective.ckeditortemplates.setuphandlers.setupVarious"
+      >
+    <depends name="typeinfo" />
   </genericsetup:importStep>
 
   <genericsetup:upgradeStep
       title="Disable global allow for ckeditortemplates folder"
       description="Disable global allow for ckeditortemplates folder"
+      profile="collective.ckeditortemplates:default"
       source="*"
       destination="0002"
       handler=".upgrades.update_content_folder"
-      profile="collective.ckeditortemplates:default" />
+      />
 
   <genericsetup:upgradeStep
       title="Add dx multi language behavior"
       description="This module is now plone.app.multilingual compatible"
+      profile="collective.ckeditortemplates:default"
       source="0002"
       destination="0003"
       handler=".upgrades.add_dx_language_behavior"
-      profile="collective.ckeditortemplates:default" />
+      />
 
   <genericsetup:upgradeStep
       title="Remove dx multi language behavior"
       description=""
+      profile="collective.ckeditortemplates:default"
       source="0003"
       destination="0004"
       handler=".upgrades.remove_dx_language_behavior"
-      profile="collective.ckeditortemplates:default" />
+      />
 
   <genericsetup:upgradeStep
       title="Update workflow for adding view for template for member"
       description=""
+      profile="collective.ckeditortemplates:default"
       source="0004"
       destination="0005"
       handler=".upgrades.update_workflow"
-      profile="collective.ckeditortemplates:default" />
+      />
 
 </configure>

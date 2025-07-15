@@ -1,12 +1,13 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <object name="portal_controlpanel">
-    <configlet title="CKEditor templates"
-        action_id="CKEditor templates"
-        appId="collective.ckeditortemplates"
-        category="Products"
-        condition_expr=""
-        url_expr="string:${portal_url}/ckeditortemplates"
-        visible="True"
-        remove="True">
-    </configlet>
+  <configlet action_id="CKEditor templates"
+             appId="collective.ckeditortemplates"
+             category="Products"
+             condition_expr=""
+             remove="True"
+             title="CKEditor templates"
+             url_expr="string:${portal_url}/ckeditortemplates"
+             visible="True"
+  >
+</configlet>
 </object>
