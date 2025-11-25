@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.9.2 (unreleased)
-------------------
+0.10.0 (2025-11-25)
+-------------------
 
 - Added Plone 6.1 support.
   [chris-adam, sgeulette]
