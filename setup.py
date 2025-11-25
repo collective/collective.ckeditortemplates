@@ -23,6 +23,7 @@ setup(
     # Get more strings from
     # http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
@@ -49,6 +50,7 @@ setup(
     ],
     include_package_data=True,
     zip_safe=False,
+    python_requires=">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*",
     install_requires=[
         "setuptools",
         "beautifulsoup4<=4.11.2",
