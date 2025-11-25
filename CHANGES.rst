@@ -6,6 +6,10 @@ Changelog
 
 - Added Plone 6.1 support.
   [chris-adam, sgeulette]
+- Improved uninstall and allowed reinstall works correctly
+  [sgeulette]
+- Upgraded zc.buildout
+  [sgeulette]
 
 0.9.1 (2023-11-28)
 ------------------
